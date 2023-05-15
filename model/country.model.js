@@ -5,7 +5,8 @@ const countrySchema = new Schema({
     name: {type: String, required: true},
     flag: {type: String, },
     continent: {type: String, required: true},
-    creator: {type: Types.ObjectId, ref: "Creator"}
+    creator: {type: Types.ObjectId, ref: "Creator"},
+    cities: [{type: Types.ObjectId, ref: "Creator"}]
 })
 
 
