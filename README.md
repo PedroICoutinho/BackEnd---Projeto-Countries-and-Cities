@@ -1,11 +1,5 @@
-# API RESTful template + Token Based Auth
+# BackEnd - Countries and Cities
 
-Template para construção de APIs utilizando Node, Express, JWT e Mongoose.
+## Sobre o repositório 
 
-**Utilização:**
-
-- Clique no botão "Use this template"
-- Clone o repo que for criado nesse processo
-- Execute o comando `npm install` no terminal na raiz do projeto
-- Crie um arquivo `.env` baseado no arquivo `.exemple.env` presente no repositório e preencha as variaveis
-- Para colocar o servidor para rodar, execute no terminal o comando `npm run dev`
+É a construção do back-end do projeto, onde há o link entre 3 CRUD, após isso será conectado com o front-end para continuação do projeto que em breve será disponível aqui.

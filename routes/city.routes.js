@@ -62,7 +62,7 @@ cityRouter.get("/:id", async (req,res)=>{
     }
 })
 
-
+// Apagando quando é o token do criador e travando quando não é - Funcionando!!!
 
 cityRouter.delete("/:id", isAuth, attachCurrentUser, async (req, res)=>{
     try{
