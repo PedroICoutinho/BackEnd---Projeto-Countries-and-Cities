@@ -64,15 +64,15 @@ cityRouter.get("/:id", async (req,res)=>{
 
 // Apagando quando é o token do criador e travando quando não é - Funcionando!!!
 
-cityRouter.delete("/:id", isAuth, attachCurrentUser, async (req, res)=>{
+cityRouter.delete("/:cityId", isAuth, attachCurrentUser, async (req, res)=>{
     try{
-        const city = await CityModel.findOne({_id: req.params.id})
+        const city = await CityModel.findOne({_id: req.params.cityId}).populate("country")
 
-        if(`${city.creator}` !== `${req.currentUser._id}`){
+        if(`${city.creator}` !== `${req.currentUser._id}` || `${city.country.creator}` !== `${req.currentUser._id}`){
             return res.status(401).json("You can't delete other user city") 
         }
 
-        const deleteCity = await CityModel.deleteOne({_id: req.params.id})
+        const deleteCity = await CityModel.deleteOne({_id: req.params.cityId})
 
         await UserModel.findOneAndUpdate(
             {_id: req.currentUser._id},

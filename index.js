@@ -18,8 +18,8 @@ app.use(express.json());
 
 app.use(`/cities`, cityRouter)
 app.use(`/countries`, countryRouter)
-app.use(`/api/user`, userRouter);
-app.use(`/api/uploadImage`, uploadImgRouter);
+app.use(`/user`, userRouter);
+app.use(`/uploadImage`, uploadImgRouter);
 
 app.listen(Number(process.env.PORT), () => {
   console.log(`Server up and running at port ${process.env.PORT}`);

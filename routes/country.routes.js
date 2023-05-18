@@ -7,7 +7,7 @@ import { UserModel } from "../model/user.model.js"
 
 const countryRouter = express.Router()
 
-//Criar post - Funcionando!
+//Criar Pais - Funcionando!
 
 countryRouter.post("/create-country", isAuth, attachCurrentUser, async (req, res)=>{
     try{
@@ -51,7 +51,7 @@ countryRouter.get("/", async (req,res)=>{
 // Pegando um só pais pelo ID - Funcionando!
 countryRouter.get("/:id", async (req, res)=>{
     try{
-        const country = await CountryModel.findOne({ _id: req.params.id})
+        const country = await CountryModel.findOne({ _id: req.params.id}).populate("cities")
 
         return res.status(200).json(country)
     }catch(e){
